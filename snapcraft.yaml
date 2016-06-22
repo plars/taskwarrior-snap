@@ -1,0 +1,23 @@
+name: taskwarrior-plars
+version: 2.5.1
+summary: feature-rich console based todo list manager
+description: |
+  Taskwarrior is Free and Open Source Software that manages your TODO list
+  from the command line. It is flexible, fast, and unobtrusive. It does its
+  job then gets out of your way.
+confinement: strict
+
+
+apps:
+  task:
+    command: task
+
+parts:
+  taskwarrior:
+    plugin: cmake
+    source: https://git.tasktools.org/scm/tm/task.git
+    source-type: git
+    build-packages:
+      - build-essential
+      - libgnutls-dev
+      - uuid-dev
